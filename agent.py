@@ -10,15 +10,19 @@ from deepeval.metrics import (
     AnswerRelevancyMetric,
     FaithfulnessMetric,
 )
-
 from tools import search_product, check_price
 
 load_dotenv()
 
+
+api_key = os.getenv("ANTHROPIC_API_KEY")
+if not api_key:
+    raise ValueError("ANTHROPIC_API_KEY was not loaded")
+
 logger = logging.getLogger(__name__)
 judge = AnthropicModel(
     model="claude-haiku-4-5",
-    api_key=os.getenv("ANTHROPIC_API_KEY"),
+    api_key=api_key,
 )
 
 metrics = [
