@@ -1,0 +1,25 @@
+[project]
+name = "online-shop-quiz"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Kelia01", email = "iradukundakelia@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "anthropic>=2.3.0",
+    "deepeval>=4.3.2",
+    "dotenv>=0.9.9",
+    "langchain>=1.4.7",
+    "logging>=0.4.9.6",
+    "pytest>=9.1.1",
+    "python-dotenv>=1.2.4",
+]
+
+[project.scripts]
+online-shop-quiz = "online_shop_quiz:main"
+
+[build-system]
+requires = ["uv_build>=0.12.9,<0.13.0"]
+build-backend = "uv_build"
